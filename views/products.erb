@@ -1,0 +1,28 @@
+<h1> <%= @page_title %> </h1>
+<div id='wrapper'>
+
+  <% @products.each do |product| %>
+    <a href='/products/location/<%= product.location %>'>
+    <div class='product'>
+      <div class='thumb'>
+        <img src='<%= product.url %>' />
+      </div>
+      <div class='caption'>
+        <%= titlecase(product.location) %>
+      </div>
+    </div>
+    </a>
+  <% end %>
+
+  <a href='/deals'>
+  <div class='product'>
+    <div class='thumb'>
+      <img src='<%= @example_deal.url %>' />
+    </div>
+    <div class='caption'>
+      Under $10!
+    </div>
+  </div>
+  </a>
+
+</div>
